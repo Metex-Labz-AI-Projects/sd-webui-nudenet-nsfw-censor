@@ -4,9 +4,9 @@ import numpy as np
 
 
 def combine_results(input_image, input_mask, processed):
-    canvas = input_image.copy()
-    canvas.paste(processed, input_mask)
-    return canvas
+    # Adjust the path image accordingly
+    base_image = Image.open('stable-diffusion-webui/extensions/warning.png').convert('RGBA')
+    return base_image
 
 
 def variable_blur(input_image: Image, control_mask: Image, blur_radius: float = 10, blur_strength_curve: float = 3, *args, **kwargs):
